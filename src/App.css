@@ -247,5 +247,13 @@ html,body,*{
   font-weight:500;
   color:#959595;
 }
-
-/* <LazyLoadImage src={process.env.PUBLIC_URL + '/assets/icon-one.PNG'} className="menu-img" alt="menu" /> */
+.hidden {
+  display: none;
+}
+#notSupported {
+  padding: 1em;
+  background-color: red;
+  color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

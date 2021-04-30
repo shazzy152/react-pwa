@@ -4,8 +4,36 @@ import './App.css';
 
 function App() {
 
+  // const butConnect = document.getElementById("butConnect");
+
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   if(butConnect){
+  //     butConnect.addEventListener("click", clickConnect);
+  //   }
+  //   const notSupported = document.getElementById('notSupported');
+  //   notSupported.classList.toggle('hidden', 'serial' in navigator);
+  // });
+
+  // async function connect() {
+  //   const port = await navigator.serial.requestPort();
+  //   await port.open({ baudrate: 9600 });
+  // }
+
+  // async function clickConnect() {
+  //   await connect();
+  // }
+
   return (
     <div className="main">
+
+      <button id="butConnect" type="button">Connect</button>
+      <div id="notSupported" class="hidden">
+        Sorry, <b>Web Serial</b> is not supported on this device, make sure you're 
+        running Chrome 78 or later and have enabled the 
+        <code>#enable-experimental-web-platform-features</code> flag in
+        <code>chrome://flags</code>
+      </div>
+
       <div className="top">
       <div className="arrow">
         <div className="svg-wrap">
