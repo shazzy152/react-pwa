@@ -4,24 +4,24 @@ import './App.css';
 
 function App() {
 
-  // const butConnect = document.getElementById("butConnect");
+  const butConnect = document.getElementById("butConnect");
 
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   if(butConnect){
-  //     butConnect.addEventListener("click", clickConnect);
-  //   }
-  //   const notSupported = document.getElementById('notSupported');
-  //   notSupported.classList.toggle('hidden', 'serial' in navigator);
-  // });
+  document.addEventListener("DOMContentLoaded", () => {
+    if(butConnect){
+      butConnect.addEventListener("click", clickConnect);
+    }
+    const notSupported = document.getElementById('notSupported');
+    notSupported.classList.toggle('hidden', 'serial' in navigator);
+  });
 
-  // async function connect() {
-  //   const port = await navigator.serial.requestPort();
-  //   await port.open({ baudrate: 9600 });
-  // }
+  async function connect() {
+    const port = await navigator.serial.requestPort();
+    await port.open({ baudrate: 9600 });
+  }
 
-  // async function clickConnect() {
-  //   await connect();
-  // }
+  async function clickConnect() {
+    await connect();
+  }
 
   return (
     <div className="main">
