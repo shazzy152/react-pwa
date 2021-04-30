@@ -4,17 +4,26 @@ import './App.css';
 
 function App() {
 
-  const butConnect = document.getElementById("butConnect");
-
   document.addEventListener("DOMContentLoaded", () => {
-    if(butConnect){
-      butConnect.addEventListener("click", clickConnect);
-    }
+
+    const lemonConnect = document.getElementById("lemonConnect");
+    lemonConnect.addEventListener("click", clickConnect);
+
+    const orangeConnect = document.getElementById("orangeConnect");
+    orangeConnect.addEventListener("click", clickConnect);
+
+    const splashConnect = document.getElementById("splashConnect");
+    splashConnect.addEventListener("click", clickConnect);
+
+    const flowerConnect = document.getElementById("flowerConnect");
+    flowerConnect.addEventListener("click", clickConnect);
+
     const notSupported = document.getElementById('notSupported');
     notSupported.classList.toggle('hidden', 'serial' in navigator);
   });
 
   async function connect() {
+    console.log('estabilishing connection...')
     const port = await navigator.serial.requestPort();
     await port.open({ baudrate: 9600 });
   }
@@ -26,7 +35,6 @@ function App() {
   return (
     <div className="main">
 
-      <button id="butConnect" type="button">Connect</button>
       <div id="notSupported" class="hidden">
         Sorry, <b>Web Serial</b> is not supported on this device, make sure you're 
         running Chrome 78 or later and have enabled the 
@@ -56,25 +64,25 @@ function App() {
       <div className="container">
           <h1 className="h-one">LIKED IT!</h1>
           <h1 className="h-two">Let's try some more<br></br>fragrance options</h1>
-            <div className="lemon">
+            <div className="lemon" id="lemonConnect" >
               <LazyLoadImage src={process.env.PUBLIC_URL + '/assets/lemon.png'} 
               className="lemon-img"
               alt="lemon"
               />
             </div>
-            <div className="orange">
+            <div className="orange" id="orangeConnect" >
               <LazyLoadImage src={process.env.PUBLIC_URL + '/assets/orange.png'} 
               className="orange-img"
               alt="orange"
               />
             </div>
-            <div className="splash">
+            <div className="splash" id="splashConnect" >
               <LazyLoadImage src={process.env.PUBLIC_URL + '/assets/splash.png'} 
               className="splash-img"
               alt="splash"
               />
             </div>
-            <div className="flower">
+            <div className="flower" id="flowerConnect" >
               <LazyLoadImage src={process.env.PUBLIC_URL + '/assets/flower.png'} 
               className="flower-img"
               alt="flower"
